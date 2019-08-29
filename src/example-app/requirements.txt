@@ -1,0 +1,10 @@
+# To install Python modules https://pypi.org/
+# Data Science Modules
+pandas
+numpy
+scipy
+joblib
+matplotlib
+scikit-image
+imutils
+scikit-learn
