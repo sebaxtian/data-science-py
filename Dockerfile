@@ -11,7 +11,7 @@ FROM python:3-slim
 RUN echo "Default ENVIRONMENT VARS to make build: "
 ARG DIR_APP=example-app
 ARG PYTHON_ENV=production
-ARG PORT_APP=1998
+ARG PORT_APP=8888
 
 # Custom ENVIRONMENT VARS to make build
 RUN echo "Custom ENVIRONMENT VARS to make build: "
@@ -28,12 +28,14 @@ WORKDIR /home/python/src
 #apk --no-cache --update-cache add gcc gfortran python python-dev py-pip build-base wget freetype-dev libpng-dev openblas-dev
 #ln -s /usr/include/locale.h /usr/include/xlocale.h
 
-# Install src dependencies
-COPY src/$DIR_APP/requirements.txt .
+# Install Python modules dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the app source
 COPY src/$DIR_APP .
+# Install Python modules app source dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Replace this with your application's default port
 EXPOSE $PORT_APP
