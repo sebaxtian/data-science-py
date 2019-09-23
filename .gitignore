@@ -153,10 +153,12 @@ src/*
 src/example-app/input/*
 !src/example-app/input/.gitkeep
 !src/example-app/input/README.md
+!src/example-app/input/user-activity.csv
 
 # Application Outputs
 src/example-app/output/*
 !src/example-app/output/.gitkeep
 !src/example-app/output/README.md
+!src/example-app/output/user-activities.csv
 
 # End of https://www.gitignore.io/api/visualstudiocode

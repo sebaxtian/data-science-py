@@ -150,10 +150,12 @@ dmypy.json
 input/*
 !input/.gitkeep
 !input/README.md
+!input/user-activity.csv
 
 # Application Outputs
 output/*
 !output/.gitkeep
 !output/README.md
+!output/user-activities.csv
 
 # End of https://www.gitignore.io/api/visualstudiocode
